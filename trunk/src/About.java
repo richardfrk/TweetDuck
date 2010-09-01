@@ -9,8 +9,6 @@
  * Created on 23/08/2010, 09:55:53
  */
 
-package tweetduck;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
