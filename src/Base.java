@@ -9,8 +9,6 @@
  * Created on 18/08/2010, 15:26:36
  */
 
-package tweetduck;
-
 /**
  *
  * @author Richard Frank
