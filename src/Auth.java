@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.http.AccessToken;
 import twitter4j.http.RequestToken;
 
 public class Auth extends javax.swing.JFrame {
@@ -49,13 +50,16 @@ public void Connect() {
                 String token = requestToken.getToken();
                 String tokenSecret = requestToken.getTokenSecret();
  
-                String PIN = requestToken.getAuthorizationURL();
-                java.awt.Desktop.getDesktop().browse(java.net.URI.create(PIN));
-                JOptionPane.showInputDialog("PIN");
+                String requestPIN = requestToken.getAuthorizationURL();
+                java.awt.Desktop.getDesktop().browse(java.net.URI.create(requestPIN));
+                String PIN = JOptionPane.showInputDialog("PIN");
+
+                AccessToken accessToken = t.getOAuthAccessToken(token, tokenSecret, PIN);
+                t.setOAuthAccessToken(accessToken);
                 
-                //Base b = new Base(t);
-                //b.setLocationRelativeTo(null);
-		//b.setVisible(true);
+                Base b = new Base(t);
+                b.setLocationRelativeTo(null);
+		b.setVisible(true);
  
 		this.dispose();
 	} catch (IOException ex) {
