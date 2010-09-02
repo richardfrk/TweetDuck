@@ -14,10 +14,14 @@
  * @author Richard Frank
  */
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
+import twitter4j.http.RequestToken;
 
 public class Auth extends javax.swing.JFrame {
 
@@ -33,19 +37,30 @@ public class Auth extends javax.swing.JFrame {
 }
 
 public void Connect() {
-	String usuario = txtLogin.getText();
+
+        String usuario = txtLogin.getText();
 	String senha = getPass();
 
 	try {
-		Twitter t = new TwitterFactory().getInstance(usuario, senha);
-                t.get
 
-                Base b = new Base(t);
-                b.setLocationRelativeTo(null);
-		b.setVisible(true);
+		Twitter t = new TwitterFactory().getInstance();
+                t.setOAuthConsumer("UwUkPU4p5KWMrUNvFRNcUg","dEVSuTUbJFRQ79V0DkqbKbryidR5l5mWvxZgw16cv8");
+                RequestToken requestToken = t.getOAuthRequestToken();
+                String token = requestToken.getToken();
+                String tokenSecret = requestToken.getTokenSecret();
+ 
+                String PIN = requestToken.getAuthorizationURL();
+                java.awt.Desktop.getDesktop().browse(java.net.URI.create(PIN));
+                JOptionPane.showInputDialog("PIN");
+                
+                //Base b = new Base(t);
+                //b.setLocationRelativeTo(null);
+		//b.setVisible(true);
  
 		this.dispose();
-	} catch (TwitterException ex) {
+	} catch (IOException ex) {
+            Logger.getLogger(Auth.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TwitterException ex) {
                         if(ex.getStatusCode() == 401){
 			JOptionPane.showMessageDialog(this, "Opss!, your username or password are incorrect. Try again!");
                         }
