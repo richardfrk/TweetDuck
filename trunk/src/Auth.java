@@ -39,8 +39,8 @@ public class Auth extends javax.swing.JFrame {
 
 public void Connect() {
 
-        String usuario = txtLogin.getText();
-	String senha = getPass();
+        //String usuario = txtLogin.getText();
+	//String senha = getPass();
 
 	try {
 
@@ -52,7 +52,7 @@ public void Connect() {
  
                 String requestPIN = requestToken.getAuthorizationURL();
                 java.awt.Desktop.getDesktop().browse(java.net.URI.create(requestPIN));
-                String PIN = JOptionPane.showInputDialog("PIN");
+                String PIN = JOptionPane.showInputDialog("Enter the PIN");
 
                 AccessToken accessToken = t.getOAuthAccessToken(token, tokenSecret, PIN);
                 t.setOAuthAccessToken(accessToken);
@@ -62,6 +62,7 @@ public void Connect() {
 		b.setVisible(true);
  
 		this.dispose();
+                
 	} catch (IOException ex) {
             Logger.getLogger(Auth.class.getName()).log(Level.SEVERE, null, ex);
         } catch (TwitterException ex) {
@@ -82,7 +83,7 @@ public void Connect() {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("TweetBird - Login");
+        setTitle("TweetDuck - Login");
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setResizable(false);
