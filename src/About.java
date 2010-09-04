@@ -51,7 +51,7 @@ public class About extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans Semi-Condensed", 1, 36));
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("TweetBird v0.6 Alpha");
+        jLabel1.setText("TweetDuck v0.6 Alpha");
 
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Version:");
@@ -95,7 +95,7 @@ public class About extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("DejaVu Sans Semi-Condensed", 1, 12));
         jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("http://code.google.com/p/tweetbird");
+        jLabel12.setText("http://code.google.com/p/tweetduck");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -111,10 +111,6 @@ public class About extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel2)
-                .addContainerGap(127, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +134,11 @@ public class About extends javax.swing.JFrame {
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addComponent(jLabel2)
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +175,7 @@ public class About extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-        String url = "http:code.google.com/p/tweetbird";
+        String url = "http:code.google.com/p/tweetduck";
         try {
             java.awt.Desktop.getDesktop().browse(java.net.URI.create(url));
         } catch (IOException ex) {
