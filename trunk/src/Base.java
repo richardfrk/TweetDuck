@@ -641,11 +641,13 @@ public class Base extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        this.dispose();
-        Auth a = new Auth();
-        a.setVisible(true);
-        a.setLocationRelativeTo(null);
+
+            // TODO add your handling code here:
+            this.dispose();
+            Auth a = new Auth();
+            a.setVisible(true);
+            a.setLocationRelativeTo(null);
+        
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
